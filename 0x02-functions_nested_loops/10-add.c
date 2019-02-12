@@ -6,7 +6,7 @@
  * @x: integer 2
  * Return: Sum of two i + x
  */
-int add(i, x)
+int add(int i, int x)
 {
 	return (i + x);
 }

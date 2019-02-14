@@ -7,18 +7,18 @@
  */
 void print_most_numbers(void)
 {
-        int x = 0;
+	int x = 0;
 
-        while (x >= 0 && x < 10)
-        {
-                if (x != 2)
-                {
+	while (x >= 0 && x < 10)
+	{
+		if (x != 2)
+		{
 			if (x != 4)
 			{
 				_putchar(x + '0');
 			}
-                }
-                x++;
-        }
-        _putchar('\n');
+		}
+		x++;
+	}
+	_putchar('\n');
 }

@@ -15,14 +15,11 @@ void print_rev(char *s)
 	{
 
 	}
-	y = x;
-	for (; s[x] >= 0; x--)
+	y = x - 1;
+	for (; s[y] >= 0; y--)
 	{
-		l = s[x];
-		if (x != y)
-		{
-			_putchar(l);
-		}
+       		l = s[y];
+	       	_putchar(l);
 	}
 	_putchar('\n');
 }

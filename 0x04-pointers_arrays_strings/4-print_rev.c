@@ -17,8 +17,11 @@ void print_rev(char *s)
 	}
 	for (; s[x] >= 0; x--)
 	{
-		l = s[x];
-		_putchar(l);
+		if (s[x] != '\0')
+		{
+			l = s[x];
+			_putchar(l);
+		}
 	}
 	_putchar('\n');
 }

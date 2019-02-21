@@ -26,7 +26,7 @@ char *_strncat(char *dest, char *src, int n)
 
 /**
  * _strlen - counts the length of a string
- * @c: input string
+ * @s: input string
  *
  * Return: Length of a string (Success)
  */

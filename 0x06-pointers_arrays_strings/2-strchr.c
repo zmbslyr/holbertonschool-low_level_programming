@@ -16,6 +16,7 @@ char *_strchr(char *s, char c)
 		if (*pointerS == c)
 		{
 			return (pointerS);
+			break;
 		}
 		pointerS++;
 	}

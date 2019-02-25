@@ -9,22 +9,18 @@
  */
 char *_strchr(char *s, char c)
 {
-	char *pointerS = s;
+	int x = 0;
 
-	while (*pointerS != '\0')
+	while (s[x] != 0)
 	{
-		if (*pointerS == c)
+		if (s[x] == c)
 		{
-			return (pointerS);
+			break;
 		}
-		pointerS++;
 	}
-	if pointerS == c;
+	if (s[x] == c)
 	{
-		return (pointerS);
+		return (s + x);
 	}
-	else
-	{
-		return ('\0');
-	}
+	return ('\0');
 }

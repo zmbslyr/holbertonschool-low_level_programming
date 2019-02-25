@@ -16,9 +16,15 @@ char *_strchr(char *s, char c)
 		if (*pointerS == c)
 		{
 			return (pointerS);
-			break;
 		}
 		pointerS++;
 	}
-	return ('\0');
+	if pointerS == c;
+	{
+		return (pointers);
+	}
+	else
+	{
+		return ('\0');
+	}
 }

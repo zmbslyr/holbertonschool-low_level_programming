@@ -1,0 +1,16 @@
+#include "holberton.h"
+
+/**
+ * _strlen_recursion - finds the length of a string using recursion
+ * @s: String to be counted
+ *
+ * Return: length of sting
+ */
+int _strlen_recursion(char *c)
+{
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	return (_strlen_recursion(s + 1) + 1);
+}

@@ -13,12 +13,16 @@ int _pow_recursive(int x, int y)
 	{
 		return (-1);
 	}
-	else if (y != 0)
+	else if (y == 1)
 	{
-		return (x * _pow_recursive(x, y - 1));
+		return (x);
+	}
+	else if (y == 0)
+	{
+		return (1);
 	}
 	else
 	{
-		return (1);
+		return (x * _pow_recursive(x, y - 1));
 	}
 }

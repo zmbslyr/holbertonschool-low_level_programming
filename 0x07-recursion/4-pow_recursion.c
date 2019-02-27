@@ -1,13 +1,13 @@
 #include "holberton.h"
 
 /**
- * _pow_recursive - raised x to the power of y
+ * _pow_recursion - raised x to the power of y
  * @x: number to be raised
  * @y: power to raise to
  *
  * Return: Value of x raised to y
  */
-int _pow_recursive(int x, int y)
+int _pow_recursion(int x, int y)
 {
 	if (y < 0)
 	{
@@ -23,6 +23,6 @@ int _pow_recursive(int x, int y)
 	}
 	else
 	{
-		return (x * _pow_recursive(x, y - 1));
+		return (x * _pow_recursion(x, y - 1));
 	}
 }

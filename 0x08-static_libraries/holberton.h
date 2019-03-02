@@ -17,3 +17,4 @@ int _isalpha(int c);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 int _abs(int i);
+char *_strcpy(char *dest, char *src);

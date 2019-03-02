@@ -11,7 +11,7 @@ char *_strcpy(char *dest, char *src)
 {
 	int x, y;
 
-	for (y = 0);S[y] != '\0'; y++;
+	for (y = 0; src[y] != '\0'; y++)
 	{
 	}
 	for (x = 0; src[x] < y; x++)

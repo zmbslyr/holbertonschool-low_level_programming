@@ -1,3 +1,6 @@
+#ifndef _HOLBERTON_H_
+#define _HOLBERTON_H_
+
 int _putchar(char c);
 int _isupper(int c);
 char *_memset(char *s, char b, unsigned int n);
@@ -19,3 +22,5 @@ char *_strstr(char *haystack, char *needle);
 int _abs(int i);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
+
+#endif

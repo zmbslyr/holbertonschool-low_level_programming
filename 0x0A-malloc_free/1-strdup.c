@@ -13,11 +13,15 @@ char *_strdup(char *str)
 	char *newArray;
 
 	size = _strlen(str);
-	if (size == 0)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
-	newArray = malloc(sizeof(*str) * size);
+	newArray = malloc(sizeof(char) * size + 1);
+	if (newArray == NULL)
+	{
+		return (NULL);
+	}
 	for (index = 0; index <= size; index ++)
 	{
 		newArray[index] = str[index];

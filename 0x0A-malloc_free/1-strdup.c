@@ -22,7 +22,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	for (index = 0; index <= size; index ++)
+	for (index = 0; index <= size; index++)
 	{
 		newArray[index] = str[index];
 	}

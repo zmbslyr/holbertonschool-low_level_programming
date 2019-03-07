@@ -11,28 +11,21 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int lens1, lens2, index, indexS2;
-	char *concatStr, *blank = "";
+	char *concatStr, *empty;
+	unsigned int index, indexS2;
 
-	if (s1)
+	empty = "";
+	if (s1 == NULL)
 	{
-		lens1 = _strlen(s1);
+		s1 = empty;
 	}
-	else
+	if (s2 == NULL)
 	{
-		lens1 = 0;
-		s1 = blank;
+		s2 = empty;
 	}
-	if (s2)
-	{
-		lens2 = _strlen(s2);
-	}
-	else
-	{
-		lens2 = 0;
-		s2 = blank;
-	}
-	concatStr = malloc((sizeof(char) * lens1) + 1 + n);
+	for (index = 0; s1[index] != '\0'; index++)
+		;
+	concatStr = malloc((index + (sizeof(*s2) + 1) * sizeof(*concatStr)));
 	if (concatStr == NULL)
 	{
 		return (NULL);
@@ -41,35 +34,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		concatStr[index] = s1[index];
 	}
-	if (lens2 < n)
+	for (indexS2 = 0; s2[indexS2] != '\0' && indexS2 < n; indexS2++, index++)
 	{
-		for (indexS2 = 0; s2[indexS2] != '\0'; indexS2++, index++)
-		{
-			concatStr[index] = s2[indexS2];
-		}
-	}
-	else
-	{
-		for (indexS2 = 0; indexS2 <= n; indexS2++, index++)
-		{
-			concatStr[index] = s2[indexS2];
-		}
+		concatStr[index] = s2[indexS2];
 	}
 	concatStr[index] = '\0';
 	return (concatStr);
-}
-
-/**
- * _strlen - counts the length of a string
- * @str: string to be counted
- *
- * Return: Length of input string
- */
-int _strlen(char *str)
-{
-	int index;
-
-	for (index = 0; str[index] != '\0'; index++)
-		;
-	return (index);
 }

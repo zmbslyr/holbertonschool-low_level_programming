@@ -11,33 +11,56 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *concatStr, *empty;
-	unsigned int index, indexS2;
+	unsigned int index = 0;
+	unsigned int lens2 = 0;
+	int totLen;
+	char *concatStr, *newStringPointer, *s1Pointer, *s2Pointer;
 
-	empty = "";
 	if (s1 == NULL)
 	{
-		s1 = empty;
+		s1 = "";
 	}
 	if (s2 == NULL)
 	{
-		s2 = empty;
+		s2 = "";
 	}
-	for (index = 0; s1[index] != '\0'; index++)
-		;
-	concatStr = malloc((index + (sizeof(*s2) + 1) * sizeof(*concatStr)));
+	s1Pointer = s1;
+	s2Pointer = s2;
+	for (; *s2Pointer; s2Pointer++)
+	{
+		lens2++;
+	}
+	for (; *s1Pointer; s1Pointer++)
+	{
+		totLen++;
+	}
+	if (n > lens2)
+	{
+		totLen += lens2;
+	}
+	else
+	{
+		for (; index < n; index++)
+		{
+			totLen++;
+		}
+	}
+	concatStr = malloc(sizeof(char) * totLen + 1);
+	newStringPointer = concatStr;
 	if (concatStr == NULL)
 	{
 		return (NULL);
 	}
-	for (index = 0; s1[index] != '\0'; index++)
+	for (; *s1; s1++, newStringPointer++)
 	{
-		concatStr[index] = s1[index];
+		*newStringPointer = *s1;
 	}
-	for (indexS2 = 0; s2[indexS2] != '\0' && indexS2 < n; indexS2++, index++)
-	{
-		concatStr[index] = s2[indexS2];
-	}
-	concatStr[index] = '\0';
+	if (n > lens2)
+		for (; *s2; s2++, newStringPointer++)
+			*newStringPointer = *s2;
+	else
+		for (index = 0; index < n; index++, s2++, newStringPointer++)
+			*newStringPointer = *s2;
+	*newStringPointer = '\0';
 	return (concatStr);
 }

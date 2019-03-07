@@ -33,7 +33,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		strConcat[index] = s1[index];
 	}
-	for (s2Index = 0, index = index -1; s2Index <= s2len; index++, s2Index++)
+	for (s2Index = 0, index = index - 1; s2Index <= s2len; index++, s2Index++)
 	{
 		strConcat[index] = s2[s2Index];
 	}

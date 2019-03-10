@@ -2,20 +2,28 @@
 #include <stdio.h>
 
 /**
- * count_to_98 - counts to 98
- * @x: integer
+ * print_to_98 - counts to 98
+ * @n: integer
+ *
  * Return: count to 98 from x
  */
-void print_to_98(int x)
+void print_to_98(int n)
 {
-	while (x < 98)
+	int count;
+
+	if (n < 98)
 	{
-		printf("%d, ", x++);
+		for (count = n; count < 98; count++)
+		{
+			printf("%d, ", count);
+		}
 	}
-	while (x > 98)
+	else if (n > 98)
 	{
-		printf("%d, ", x--);
+		for (count = n; count > 98; count--)
+		{
+			printf("%d, ", count);
+		}
 	}
-       	printf("%d", x);
-	printf("\n");
+	printf("%d\n", 98);
 }

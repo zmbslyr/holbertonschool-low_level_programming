@@ -1,0 +1,4 @@
+#ifndef _VARIADIC_FUNCTIONS_
+#define _VARIADIC_FUNCTIONS_
+
+#endif

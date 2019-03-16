@@ -12,4 +12,23 @@
  */
 void print_strings(const char *seperator, const unsigned int n, ...)
 {
+	va_list valist;
+	unsigned int index;
+	char *string;
+
+	va_start(valist, n);
+	for (index = 0; index < n; index++)
+	{
+		string = va_arg(valist, char*);
+		if (string == NULL)
+			printf("nil");
+		else
+			printf("%s", string);
+		if (seperator != NULL && index < (n - 1))
+		{
+			printf("%s", seperator);
+		}
+	}
+	va_end(valist);
+	printf("\n");
 }

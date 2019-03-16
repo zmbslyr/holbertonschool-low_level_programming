@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/*
- * print_numbers - Prints all numbers given to function
+/**
+ * print_numbers - prints all numbers given to a function
  * @seperator: input delimiter to go between numbers
  * @n: Numbers to be printed
  *

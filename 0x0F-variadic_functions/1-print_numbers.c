@@ -15,8 +15,6 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 	va_list valist;
 	unsigned int index;
 
-	if (n == 0)
-		return;
 	va_start(valist, n);
 	for (index = 0; index < n; index++)
 	{
@@ -26,6 +24,6 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 			printf("%s", seperator);
 		}
 	}
-	printf("\n");
 	va_end(valist);
+	printf("\n");
 }

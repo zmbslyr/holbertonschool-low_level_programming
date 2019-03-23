@@ -8,28 +8,18 @@
  */
 int main(void)
 {
-	int num, x, y;
+	int num;
 
 	for (num = 1; num <= 100; num++)
 	{
-		x = 0;
-		y = 0;
-		if ( num % 3 == x && num % 5 == y)
-		{
+		if (num % 3 == 0 && num % 5 == 0)
 			printf("FizzBuzz ");
-		}
-		else if (num % 3 == x)
-		{
+		else if (num % 3 == 0)
 			printf("Fizz ");
-		}
-		else if (num % 5 == x)
-		{
+		else if (num % 5 == 0)
 			printf("Buzz ");
-		}
 		else
-		{
 			printf("%d ", num);
-		}
 	}
 	printf("\n");
 	return (0);

@@ -10,32 +10,40 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *newNode, *nodePointer;
-	unsigned int count = 0;
+	listint_t *newNode;
+	listint_t *nodePointer;
+	unsigned int count = 1;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
+		return (NULL);
+	nodePointer = *head;
+	if (idx == 0)
+	{
+		newNode = malloc(sizeof(listint_t));
+		if (newNode == NULL)
+			return (NULL);
+		newNode->n = n;
+		if (*head == NULL)
+		{
+			*head = newNode;
+			newNode->next = NULL;
+		}
+		else if (*head != NULL)
+		{
+			newNode->next = *head;
+			*head = newNode;
+		}
+		return (newNode);
+	}
+	for (; count <= idx - 1 && nodePointer != NULL; count++)
+		nodePointer = nodePointer->next;
+	if (nodePointer == NULL)
 		return (NULL);
 	newNode = malloc(sizeof(listint_t));
 	if (newNode == NULL)
 		return (NULL);
 	newNode->n = n;
-	if (idx == 0)
-	{
-		newNode->next = *head;
-		*head = newNode;
-		return (newNode);
-	}
-	while (nodePointer != NULL)
-	{
-		if (count + 1 == idx)
-		{
-			newNode->next = nodePointer->next;
-			nodePointer->next = newNode;
-			return (newNode);
-		}
-		nodePointer = nodePointer->next;
-		count++;
-	}
-	free(newNode);
-	return (NULL);
+	newNode->next = nodePointer->next;
+	nodePointer->next = newNode;
+	return (newNode);
 }

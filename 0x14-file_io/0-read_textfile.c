@@ -38,8 +38,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			if (writeN <= 0)
 				return (0);
 			writeTotal += writeN;
-		} while(writeTotal < (size_t)readN);
-	} while(readTotal < letters && readN > 0);
+		} while (writeTotal < (size_t)readN);
+	} while (readTotal < letters && readN > 0);
 	close(fd);
 	free(buffer);
 	return (readTotal);

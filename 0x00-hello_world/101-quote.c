@@ -10,8 +10,11 @@
 int main(void)
 {
 	char *quote = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	int len;
 
-	write(2, quote, strlen(quote));
+	for (len = 0; quote[len] != '\0'; len++)
+		;
+	write(2, quote, len);
 	write(2, "\n", 1);
 	return (1);
 }

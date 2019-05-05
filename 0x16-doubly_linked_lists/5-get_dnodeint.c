@@ -15,7 +15,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	if (head == NULL)
 		return (NULL);
 	nodePointer = head;
-       	for (count = 0; count < index && nodePointer != NULL; count++)
+	for (count = 0; count < index && nodePointer != NULL; count++)
 	{
 		nodePointer = nodePointer->next;
 		if (nodePointer == NULL)

@@ -9,7 +9,7 @@
 int sum_dlistint(dlistint_t *head)
 {
 	dlistint_t *nodePointer;
-	int sum;
+	int sum = 0;
 
 	if (head == NULL)
 		return (0);

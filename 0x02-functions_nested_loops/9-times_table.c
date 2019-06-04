@@ -16,7 +16,7 @@ void times_table(void)
 		while (x <= 9)
 		{
 			m = x * y;
-			if (x !=0)
+			if (x != 0)
 			{
 				if (m > 9)
 				{

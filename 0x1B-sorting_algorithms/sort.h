@@ -21,6 +21,14 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/**
+ * enum kind_e - Enumerator for card types
+ *
+ * @SPADE: spades
+ * @HEART: Hearts
+ * @CLUB: Clubs
+ * @DIAMOND: Diamonds
+ */
 typedef enum kind_e
 {
 	SPADE = 0,

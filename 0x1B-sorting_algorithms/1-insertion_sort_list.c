@@ -49,15 +49,15 @@ void swapPrevious(listint_t *node)
 
 	if (node->prev == NULL)
 		return;
-	lastLast = node->prev;
-	last = lastLast->prev;
+	last = node->prev;
+	lastLast = last->prev;
 	next = node->next;
 	if (lastLast != NULL)
-		last->next = node;
-	node->prev = last;
-	node->next = lastLast;
-	lastLast->prev = node;
-	lastLast->next = next;
+		lastLast->next = node;
+	node->prev = lastLast;
+	node->next = last;
+	last->prev = node;
+	last->next = next;
 	if (next != NULL)
-		next->prev = lastLast;
+		next->prev = last;
 }

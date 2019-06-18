@@ -45,19 +45,19 @@ void insertion_sort_list(listint_t **list)
  */
 void swapPrevious(listint_t *node)
 {
-	listint_t *last, *lastLast, *next;
+	listint_t *first, *second, *next;
 
 	if (node->prev == NULL)
 		return;
-	last = node->prev;
-	lastLast = last->prev;
+	first = node->prev;
+	second = first->prev;
 	next = node->next;
-	if (lastLast != NULL)
-		lastLast->next = node;
-	node->prev = lastLast;
-	node->next = last;
-	last->prev = node;
-	last->next = next;
+	if (second != NULL)
+		second->next = node;
+	node->prev = second;
+	node->next = first;
+	first->prev = node;
+	first->next = next;
 	if (next != NULL)
-		next->prev = last;
+		next->prev = first;
 }

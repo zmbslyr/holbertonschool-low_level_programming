@@ -8,30 +8,30 @@
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *node;
+	listint_t *nodePointer;
 	int swaps;
 
 	if (list == NULL || *list == NULL)
 		return;
-	node = *list;
+	nodePointer = *list;
 	do {
 		swaps = 0;
-		for (; node->next != NULL; node = node->next)
+		for (; nodePointer->next != NULL; nodePointer = nodePointer->next)
 		{
-			if (node->n > node->next->n)
+			if (nodePointer->n > nodePointer->next->n)
 			{
-				swapNodes(list, node, node->next);
-				node = node->prev;
+				swapNodes(list, nodePointer, nodePointer->next);
+				nodePointer = nodePointer->prev;
 				print_list(*list);
 				swaps++;
 			}
 		}
-		for (; node->prev != NULL; node = node->prev)
+		for (; nodePointer->prev != NULL; nodePointer = nodePointer->prev)
 		{
-			if (node->n < node->prev->n)
+			if (nodePointer->n < nodePointer->prev->n)
 			{
-				swapNodes(list, node->prev, node);
-				node = node->next;
+				swapNodes(list, nodePointer->prev, nodePointer);
+				nodePointer = nodePointer->next;
 				print_list(*list);
 				swaps++;
 			}
@@ -47,7 +47,7 @@ void cocktail_sort_list(listint_t **list)
  *
  * Return: void
  */
-void swapNodes(listint_t **list, listint_t *second, listint_t *first)
+void swapNodes(listint_t **list, listint_t *first, listint_t *second)
 {
 	second->prev = first->prev;
 	first->prev = second;

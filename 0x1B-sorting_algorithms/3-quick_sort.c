@@ -40,8 +40,7 @@ int partition(int *array, size_t size, int begin, int piv)
 		while (array[second] < first);
 		if (second >= third)
 			return (second);
-		swap(&array, second, third);
-		print_array(array, size);
+		swap2(array, size, second, third);
 	}
 }
 
@@ -75,11 +74,12 @@ void qSort(int *array, size_t size, int begin, int last)
  *
  * Return: void
  */
-void swap(int **array, int index, int index2)
+void swap2(int *array, size_t size, int index, int index2)
 {
 	int swap;
 
-	swap = (*array)[index];
-	(*array)[index] = (*array)[index2];
-	(*array)[index2] = swap;
+	swap = array[index];
+	array[index] = array[index2];
+	array[index2] = swap;
+	print_array(array, size);
 }

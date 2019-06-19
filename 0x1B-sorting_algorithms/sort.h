@@ -85,5 +85,6 @@ void swapPrevious(listint_t *node);
 int partition(int *array, size_t size, int begin, int piv);
 void qSort(int *array, size_t size, int begin, int last);
 void swap2(int *array, size_t size, int index, int index2);
+void swapNodes(listint_t **list, listint_t *first, listint_t *second);
 
 #endif /* SORT_H */

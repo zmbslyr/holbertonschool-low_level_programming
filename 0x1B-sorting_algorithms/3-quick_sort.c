@@ -40,7 +40,8 @@ int partition(int *array, size_t size, int begin, int piv)
 		while (array[second] < first);
 		if (second >= third)
 			return (second);
-		swap2(array, size, second, third);
+		if (array[third] != array[second])
+			swap2(array, size, second, third);
 	}
 }
 

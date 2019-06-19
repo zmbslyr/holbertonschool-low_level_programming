@@ -9,6 +9,8 @@
  */
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL || size < 0)
+		return;
 	qSort(array, size, 0, size - 1);
 }
 
@@ -25,6 +27,8 @@ int partition(int *array, size_t size, int begin, int piv)
 {
 	int first, second, third;
 
+	if (array == NULL || size < 0)
+		return (-1);
 	first = array[piv];
 	second = begin - 1;
 	third = piv + 1;
@@ -54,6 +58,8 @@ void qSort(int *array, size_t size, int begin, int last)
 {
 	int store;
 
+	if (array == NULL || size < 0)
+		return;
 	if (last <= begin)
 		return;
 	store = partition(array, size, begin, last);

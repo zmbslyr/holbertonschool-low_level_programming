@@ -9,8 +9,6 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL)
-		return;
 	qSort(array, size, 0, size - 1);
 }
 
@@ -27,8 +25,6 @@ int partition(int *array, size_t size, int begin, int piv)
 {
 	int first, second, third;
 
-	if (array == NULL)
-		return (-1);
 	first = array[piv];
 	second = begin - 1;
 	third = piv + 1;
@@ -57,8 +53,6 @@ void qSort(int *array, size_t size, int begin, int last)
 {
 	int store;
 
-	if (array == NULL)
-		return;
 	if (last <= begin)
 		return;
 	store = partition(array, size, begin, last);
@@ -67,8 +61,9 @@ void qSort(int *array, size_t size, int begin, int last)
 }
 
 /**
- * swap - Swaps positions in an array
+ * swap2 - Swaps positions in an array
  * @array: Array to swap elements in
+ * @size: Size of the array
  * @index: First index
  * @index2: Second index
  *
@@ -81,5 +76,6 @@ void swap2(int *array, size_t size, int index, int index2)
 	swap = array[index];
 	array[index] = array[index2];
 	array[index2] = swap;
-	print_array(array, size);
+	if (array[index] != array[index2])
+		print_array(array, size);
 }

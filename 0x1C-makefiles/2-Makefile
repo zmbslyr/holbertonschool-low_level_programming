@@ -6,5 +6,5 @@ NAME = holberton
 %.o: %.c m.h
 	${CC} -c -o $@ $<
 
-all: ${SRC}
-	${CC} ${SRC} -o ${NAME}
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}

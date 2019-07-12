@@ -12,7 +12,7 @@ ${OBJ}: m.h
 clean:
 	${RM} *~ ${NAME}
 oclean:
-	${RM} ${OJ}
+	${RM} ${OBJ}
 fclean: clean oclean
 
 re: oclean all

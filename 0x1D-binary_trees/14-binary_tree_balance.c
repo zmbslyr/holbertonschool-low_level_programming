@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 /**
- * heighter_checker - measures height of tree
+ * height_checker - measures height of tree
  * @tree: pointer to root
  * Return: returns max number
  */

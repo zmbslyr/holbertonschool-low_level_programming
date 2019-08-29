@@ -39,6 +39,8 @@ int binary_search(int *array, size_t size, int value)
 	while (last > first)
 	{
 		print_part(array + first, array + last);
+		if (array[middle] == value)
+			return (middle);
 		if (array[middle] > value)
 		{
 			last = middle;

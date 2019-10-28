@@ -1,0 +1,1 @@
+At every index we can skip the element which are already modulus of some element we checked beofre.This way we can reduce comparisons.
